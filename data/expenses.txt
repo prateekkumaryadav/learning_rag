@@ -1,0 +1,5 @@
+Acme Corp Expense Policy
+Business travel must be booked through the company travel portal. Economy class is required for flights under 6 hours.
+Daily meal allowance during travel is 1,500 INR in metro cities and 1,000 INR elsewhere.
+Expense claims must be filed within 30 days of the expense with original receipts attached. Claims above 10,000 INR need director approval.
+Reimbursements are paid in the next monthly payroll cycle.

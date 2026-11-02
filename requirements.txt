@@ -1,0 +1,5 @@
+numpy
+scikit-learn            # fallback embedder (works offline)
+sentence-transformers   # recommended: real semantic embeddings
+anthropic               # optional: Anthropic LLM answers
+groq                    # optional: Groq Llama LLM answers
