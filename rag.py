@@ -1,17 +1,23 @@
 """
 Minimal RAG from scratch. No frameworks, so every step is visible.
 
-Pipeline:  load -> chunk -> embed -> store   (indexing, done once)
-           question -> embed -> top-k search -> build prompt -> LLM   (querying)
+Pipeline:  
+load -> chunk -> embed -> store   (indexing, done once)
+question -> embed -> top-k search -> build prompt -> LLM   (querying)
 
 Run:  python rag.py "How many days of annual leave do I get?"
 """
 import glob, os, sys
 import numpy as np
 
-CHUNK_WORDS = 60   # size of each chunk
-OVERLAP     = 15   # words shared between neighbouring chunks (keeps context)
-TOP_K       = 3    # how many chunks to retrieve
+# size of each chunk
+CHUNK_WORDS = 60   
+
+# words shared between neighbouring chunks (keeps context)
+OVERLAP     = 15
+
+# how many chunks to retrieve
+TOP_K       = 3    
 
 
 # ---------- 1. LOAD ----------
@@ -40,8 +46,7 @@ def chunk_text(text, size=CHUNK_WORDS, overlap=OVERLAP):
 
 # ---------- 3. EMBED ----------
 class Embedder:
-    """Turns text into vectors. Uses a real embedding model if installed,
-    otherwise falls back to TF-IDF (keyword-based, weaker, but offline)."""
+    """Turns text into vectors. Uses a real embedding model if installed, otherwise falls back to TF-IDF (keyword-based, weaker, but offline)."""
 
     def __init__(self):
         try:
